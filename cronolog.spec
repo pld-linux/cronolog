@@ -5,9 +5,9 @@ Version:	1.6.2
 Release:	1
 License:	Apache license
 Group:		Networking/Daemons
-Source0:	http://www.ford-mason.co.uk/resources/cronolog/cronolog-%{version}.tar.gz
-# Source0-md5:	18cf20d712b9aa83a766fe70234ceec8
-URL:		http://www.ford-mason.co.uk/resources/cronolog/
+Source0:	http://www.cronolog.org/download/cronolog-%{version}.tar.gz
+# Source0-md5:	a44564fd5a5b061a5691b9a837d04979
+URL:		http://www.cronolog.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
