@@ -27,7 +27,7 @@ Dziêki u¿yciu mechanizmu "piped logs", program ten mo¿e byæ stosowany
 do rotacji logów, która nie wymaga restartowania serwera Apache.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 %configure2_13
