@@ -51,8 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc AUTHORS ChangeLog README NEWS TODO
 %attr(755,root,root) %{_sbindir}/cronolog
 %attr(755,root,root) %{_sbindir}/cronosplit
 %{_mandir}/man1/*.1*
-%{_infodir}/*.info*
+%{_infodir}/*.gz
