@@ -55,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/cronolog
 %attr(755,root,root) %{_sbindir}/cronosplit
 %{_mandir}/man1/*.1*
-%{_infodir}/*.gz
+%{_infodir}/*.info*
