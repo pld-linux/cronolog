@@ -29,7 +29,7 @@ do rotacji logów, która nie wymaga restartowania serwera Apache.
 %setup -q -n %{name}-%{version}
 
 %build
-./configure
+%configure2_13
 
 %{__make}
 
@@ -37,15 +37,21 @@ do rotacji logów, która nie wymaga restartowania serwera Apache.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	prefix=$RPM_BUILD_ROOT%{_prefix} \
-	mandir=$RPM_BUILD_ROOT%{_mandir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_sbindir}/cronolog
 %attr(755,root,root) %{_sbindir}/cronosplit
-%attr(644,root,root) %{_mandir}/man1/*.1*
+%{_mandir}/man1/*.1*
+%{_infodir}/*.info*
