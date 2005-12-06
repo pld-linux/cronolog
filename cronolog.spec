@@ -2,11 +2,12 @@ Summary:	A flexible log file rotation program for Apache
 Summary(pl):	Program do elastycznej rotacji logów serwera Apache
 Name:		cronolog
 Version:	1.6.2
-Release:	1
+Release:	2
 License:	Apache license
 Group:		Networking/Daemons
-Source0:	http://www.cronolog.org/download/cronolog-%{version}.tar.gz
+Source0:	http://www.cronolog.org/download/%{name}-%{version}.tar.gz
 # Source0-md5:	a44564fd5a5b061a5691b9a837d04979
+Patch0:		http://cronolog.org/patches/%{name}-jumbo-patch.txt
 URL:		http://www.cronolog.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -18,16 +19,17 @@ uses the same format specifiers as the Unix date command (which are
 the same as the standard C strftime library function).
 
 %description -l pl
-"cronolog" jest prostym programem czytaj±cym logi i zapisuj±cym
-je do plików wyj¶ciowych, których nazwy mo¿na tworzyæ u¿ywaj±c
-szablonu oraz bie¿±cego czasu i daty. Szablony korzystaj± z tego
-samego formatu co polecenie date systemu Unix (który jest taki
-sam jak dla standardowej funkcji C strftime).
-Dziêki u¿yciu mechanizmu "piped logs", program ten mo¿e byæ stosowany
-do rotacji logów, która nie wymaga restartowania serwera Apache.
+"cronolog" jest prostym programem czytaj±cym logi i zapisuj±cym je do
+plików wyj¶ciowych, których nazwy mo¿na tworzyæ u¿ywaj±c szablonu oraz
+bie¿±cego czasu i daty. Szablony korzystaj± z tego samego formatu co
+polecenie date systemu Unix (który jest taki sam jak dla standardowej
+funkcji C strftime). Dziêki u¿yciu mechanizmu "piped logs", program
+ten mo¿e byæ stosowany do rotacji logów, która nie wymaga
+restartowania serwera Apache.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_13
@@ -39,6 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
