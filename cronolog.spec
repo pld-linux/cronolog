@@ -2,7 +2,7 @@ Summary:	A flexible log file rotation program for Apache
 Summary(pl):	Program do elastycznej rotacji logów serwera Apache
 Name:		cronolog
 Version:	1.6.2
-Release:	3
+Release:	4
 License:	Apache license
 Group:		Networking/Daemons
 Source0:	http://www.cronolog.org/download/%{name}-%{version}.tar.gz
@@ -42,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm $RPM_BUILD_ROOT%{_infodir}/dir
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
