@@ -1,5 +1,5 @@
 Summary:	A flexible log file rotation program for Apache
-Summary(pl.UTF-8):   Program do elastycznej rotacji logów serwera Apache
+Summary(pl.UTF-8):	Program do elastycznej rotacji logów serwera Apache
 Name:		cronolog
 Version:	1.6.2
 Release:	4
