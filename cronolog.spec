@@ -1,5 +1,5 @@
 Summary:	A flexible log file rotation program for Apache
-Summary(pl):	Program do elastycznej rotacji logów serwera Apache
+Summary(pl.UTF-8):   Program do elastycznej rotacji logÃ³w serwera Apache
 Name:		cronolog
 Version:	1.6.2
 Release:	4
@@ -18,13 +18,13 @@ constructed using template and the current date and time. The template
 uses the same format specifiers as the Unix date command (which are
 the same as the standard C strftime library function).
 
-%description -l pl
-"cronolog" jest prostym programem czytaj±cym logi i zapisuj±cym je do
-plików wyj¶ciowych, których nazwy mo¿na tworzyæ u¿ywaj±c szablonu oraz
-bie¿±cego czasu i daty. Szablony korzystaj± z tego samego formatu co
-polecenie date systemu Unix (który jest taki sam jak dla standardowej
-funkcji C strftime). Dziêki u¿yciu mechanizmu "piped logs", program
-ten mo¿e byæ stosowany do rotacji logów, która nie wymaga
+%description -l pl.UTF-8
+"cronolog" jest prostym programem czytajÄ…cym logi i zapisujÄ…cym je do
+plikÃ³w wyjÅ›ciowych, ktÃ³rych nazwy moÅ¼na tworzyÄ‡ uÅ¼ywajÄ…c szablonu oraz
+bieÅ¼Ä…cego czasu i daty. Szablony korzystajÄ… z tego samego formatu co
+polecenie date systemu Unix (ktÃ³ry jest taki sam jak dla standardowej
+funkcji C strftime). DziÄ™ki uÅ¼yciu mechanizmu "piped logs", program
+ten moÅ¼e byÄ‡ stosowany do rotacji logÃ³w, ktÃ³ra nie wymaga
 restartowania serwera Apache.
 
 %prep
